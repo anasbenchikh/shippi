@@ -33,9 +33,11 @@ import admin from 'firebase-admin'
 import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
 
-const serviceAccount = "/Users/macos/Downloads/orders-shipp-firebase-adminsdk-ntfaw-5c53348ca3.json"
+const serviceAccount = "/Users/macos/Downloads/orders-shipp-firebase-adminsdk-ntfaw-5c53348ca3.json";
+const firebaseCredentials = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+
 const app = initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert(firebaseCredentials),
     databaseURL: 'https://orders-shipp.firebaseio.com'
 });
 console.log('Initializing app...');
