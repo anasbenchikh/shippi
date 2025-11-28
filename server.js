@@ -9,6 +9,7 @@ const app = express();
 
 
 app.use(cors({origin: 'http://localhost:4200'}))
+app.use(cors({origin: 'https://shippi-production.up.railway.app'}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
