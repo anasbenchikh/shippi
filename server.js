@@ -12,9 +12,11 @@ const allowedOrigins = [
     'https://shippi-production.up.railway.app',
 ];
 
-app.use(cors({origin: allowedOrigins, credentials: true}))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors({origin: allowedOrigins, credentials: true,
+                methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+                allowedHeaders: ['Content-Type', 'Authorization']}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Register api routes
