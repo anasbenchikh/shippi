@@ -9,7 +9,7 @@ const app = express();
 
 const allowedOrigins = [
     'http://localhost:4200',
-    'https://shippi-production.up.railway.app',
+    'https://shippi-front.web.app'
 ];
 
 app.use(cors({origin: allowedOrigins, credentials: true,
