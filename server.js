@@ -7,9 +7,12 @@ import bodyParser from "body-parser"
 const app = express();
 
 
+const allowedOrigins = [
+    'http://localhost:4200',
+    'https://shippi-production.up.railway.app',
+];
 
-app.use(cors({origin: 'http://localhost:4200'}))
-app.use(cors({origin: 'https://shippi-production.up.railway.app'}))
+app.use(cors({origin: allowedOrigins, credentials: true}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
